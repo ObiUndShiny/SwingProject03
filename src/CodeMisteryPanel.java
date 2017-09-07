@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 
 public class CodeMisteryPanel extends JPanel {
 	
-	public CodeMisteryPanel() {
+	public CodeMisteryPanel(ControlPanel control_panel) {
 		super();
 	}
 

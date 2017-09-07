@@ -33,8 +33,9 @@ public class MainFrame extends JFrame {
 		super.setTitle("Mistery");
 		
 		ControlPanel control_panel = new ControlPanel();
-		CodeMisteryPanel cpanel = new CodeMisteryPanel();
-		AdjustMisteryPanel apanel = new AdjustMisteryPanel();
+		
+		CodeMisteryPanel cpanel = new CodeMisteryPanel(control_panel);
+		AdjustMisteryPanel apanel = new AdjustMisteryPanel(control_panel);
 		
 		contentPane.add(control_panel, BorderLayout.CENTER);
 		contentPane.add(cpanel, BorderLayout.WEST);
