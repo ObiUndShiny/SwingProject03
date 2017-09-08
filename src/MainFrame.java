@@ -1,12 +1,9 @@
 
-import java.awt.*;
-import java.awt.TrayIcon.MessageType;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
 
@@ -14,7 +11,7 @@ public class MainFrame extends JFrame {
 
 	public MainFrame() {
 		try {
-			setDefaultCloseOperation(EXIT_ON_CLOSE);
+			setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 			FrameInit();
 		} catch (Exception exception) {
 			exception.printStackTrace();
@@ -28,18 +25,19 @@ public class MainFrame extends JFrame {
 	 */
 	private void FrameInit() throws Exception {
 		contentPane = (JPanel) getContentPane();
-		contentPane.setLayout(new BorderLayout());
-		super.setSize(new Dimension(600, 400));
+		contentPane.setLayout(new GridLayout(1, 3, 50, 10));
+		super.setSize(new Dimension(900, 400));
 		super.setTitle("Mistery");
+		super.setResizable(false);
 		
 		ControlPanel control_panel = new ControlPanel();
 		
 		CodeMisteryPanel cpanel = new CodeMisteryPanel(control_panel);
 		AdjustMisteryPanel apanel = new AdjustMisteryPanel(control_panel);
 		
-		contentPane.add(control_panel, BorderLayout.CENTER);
-		contentPane.add(cpanel, BorderLayout.WEST);
-		contentPane.add(apanel, BorderLayout.EAST);
+		contentPane.add(cpanel);
+		contentPane.add(control_panel);
+		contentPane.add(apanel);
 
 	}
 

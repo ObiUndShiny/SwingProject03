@@ -114,7 +114,7 @@ public class AdjustMisteryPanel extends JPanel {
 	private boolean checkColor() {
 		
 		if ((r*1.0)/tr > LIMIT && (g*1.0)/tg > LIMIT && (b*1.0)/tb > LIMIT) {
-			control_panel.getAdjustmentUnlock().setBackground(Color.GREEN);
+			control_panel.solveAdjustmentMistery();
 			return true;
 		}
 		
